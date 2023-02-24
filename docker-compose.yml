@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+    
+    postgres:        
+        image: postgres:14.5
+        ports:
+        - 5432:5432
+      
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: root
+            POSTGRES_DB: cabdb
+
+      
+    customer:        
+        build: .	# docker file is in current directory
+        #image: imagename:tag
+        ports:
+        - 8080:8080	# Mapping host port with the container port because app will run at 8080 inside container and we want it to accept traffic from host
+     
+  
