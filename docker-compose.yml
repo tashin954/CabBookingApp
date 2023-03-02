@@ -16,7 +16,6 @@ services:
     cabbooking:        
         build: .	# docker file is in current directory
         #image: imagename:tag
+        image: 'tashinv01/cabapp'
         ports:
         - 8080:8080	# Mapping host port with the container port because app will run at 8080 inside container and we want it to accept traffic from host
-     
-  
